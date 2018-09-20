@@ -18,6 +18,7 @@ from django.urls import path, include
 
 from rest_framework import routers
 from api.serializers import SongsViewSet
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register('songs', SongsViewSet)
@@ -25,5 +26,6 @@ router.register('songs', SongsViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token)
 ]

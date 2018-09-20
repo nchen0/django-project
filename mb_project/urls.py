@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from rest_framework import routers
-from api.views import ListSongsView
+from api.serializers import SongsViewSet
+
+router = routers.DefaultRouter()
+router.register('songs', SongsViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('api/', include('api.urls'))
+    path('api/', include(router.urls))
 ]

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Post
+from .models import Post, PersonalPost
 
 
 class NoteAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class NoteAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, NoteAdmin)
+admin.site.register(PersonalPost)

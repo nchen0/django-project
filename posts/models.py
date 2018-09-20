@@ -1,5 +1,6 @@
 from django.db import models
 from uuid import uuid4
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -13,3 +14,7 @@ class Post(models.Model):
     def __str__(self):
         """A string representation of the model."""
         return self.text[:50]
+
+
+class PersonalPost(Post):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

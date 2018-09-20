@@ -136,5 +136,3 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
-
-django_heroku.settings(locals())
